@@ -18,10 +18,8 @@ jobs:
               
       - name: Condition
         run: |
-            if [ "${FILE_CONTENT,,}" = "dev" ]; then
-              echo "Yes This is dev"
-              exit 0
+            if [[ "$FILE_CONTENT" == "dev" ]]; then
+              echo "Yes, This is dev"
             else
               echo "No, this is not dev"
-              exit 1
             fi
