@@ -13,8 +13,7 @@ jobs:
       - name: Reading Data
         run: |
               FILE_CONTENT=$(cat temp.txt)
-              echo "$FILE_CONTENT"
-
+        
       - name: Condition
         run: |
             if [[$FILE_CONTENT == "Dev"]]; then
