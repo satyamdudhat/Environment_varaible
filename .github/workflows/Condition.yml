@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Reading Data
-        run: $FILE_DATA=(cat temp.txt)
+        run: $FILE_DATA=$(cat temp.txt)
 
       - name: Display Data
         run: echo "Your File Data is :$FILE_DATA"
