@@ -13,5 +13,5 @@ jobs:
       - name: Reading Data
         run: |
               FILE_CONTENT=$(cat temp.txt)
-              echo "File Content: $FILE_CONTENT"
+              echo "$FILE_CONTENT"
             
