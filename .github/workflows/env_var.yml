@@ -1,8 +1,8 @@
 name: Enviroment Varaible
 on: 
   push:
-            branches:
-              -Developer
+            # branches:
+            #   -Developer
               
 jobs:
     Getting-branch-name:
