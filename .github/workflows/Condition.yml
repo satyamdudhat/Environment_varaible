@@ -13,14 +13,13 @@ jobs:
       - name: Reading Data
         run: |
               FILE_CONTENT=$(cat temp.txt)
-        
-      - name: Condition
-        run: |
-            echo "File Content: $FILE_CONTENT"
-            if [ "$FILE_CONTENT" = "Dev" ]; then
-                  echo "Yes This is dev"
-            else
-                  echo "No this is not dev"
-                  exit 0
-            fi
+              echo "File Content: $FILE_CONTENT"
+      # - name: Condition
+      #   run: |
+      #       if [ "$FILE_CONTENT" = "Dev" ]; then
+      #             echo "Yes This is dev"
+      #       else
+      #             echo "No this is not dev"
+      #             exit 0
+      #       fi
                 
