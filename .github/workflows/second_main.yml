@@ -2,7 +2,7 @@ name: Getting a data
 on:
   push:
     branches:
-      -master
+      - master
 jobs:
   getting-data:
     runs-on: ubantu-latest
