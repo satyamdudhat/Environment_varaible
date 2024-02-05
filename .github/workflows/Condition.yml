@@ -14,4 +14,4 @@ jobs:
         run: FILE_DATA=$(cat temp.txt)
 
       - name: Display Data
-        run: echo "Your File Data is :"$FILE_DATA
+        run: echo "Your File Data is :$FILE_DATA"
