@@ -1,1 +1,14 @@
+name: Condition workflow
+on:
+  push:
+    branches:
+      - master
+jobs:
+  read-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reading Data
+        run: $FILE_DATA(cat temp.txt)
 
+      - name: Display Data
+        run: echo "Your File Data is :"$FILE_DATA
