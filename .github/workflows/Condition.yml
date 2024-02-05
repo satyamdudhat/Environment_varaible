@@ -10,16 +10,19 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         
+      - name: Write to File
+        run: echo "dev" > temp.txt 
+        
       - name: Reading Data
         run: |
               FILE_CONTENT=$(cat temp.txt)
               echo "File Content: $FILE_CONTENT"
 
-              
       - name: Condition
         run: |
-            if [[ "$FILE_CONTENT,," == "dev" ]]; then
+            if [[ "$FILE_CONTENT" == "dev" ]]; then
               echo "Yes, This is dev"
             else
               echo "No, this is not dev"
+              exit 0
             fi
