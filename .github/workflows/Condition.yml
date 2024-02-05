@@ -19,6 +19,9 @@ jobs:
       - name: Condition
         run: |
             if [ "$FILE_CONTENT" = "Dev" ]; then
-                  echo "Yes This is dev"
-                  exit 0
+              echo "Yes This is dev"
+              exit 0
+            else
+              echo "No, this is not dev"
+              exit 1
             fi
