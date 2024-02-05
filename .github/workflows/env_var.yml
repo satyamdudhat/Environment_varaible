@@ -1,0 +1,20 @@
+name: Enviroment Varaible
+on: 
+  pull_request:
+            branches:
+              -Developer
+              
+jobs:
+    Getting-branch-name:
+      runs-on: ubuntu-latest
+
+      env:
+        MY_VARIABLE: "SOME-VALUE"
+
+      steps:
+        - name: Print Variable
+          run: echo $MY_VARIABLE
+
+        
+
+  
