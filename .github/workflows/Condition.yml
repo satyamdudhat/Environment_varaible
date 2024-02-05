@@ -20,9 +20,8 @@ jobs:
 
       - name: Condition
         run: |
-            if [[ "$FILE_CONTENT" == "dev" ]]; then
+             if grep -q -i "dev" temp.txt; then
               echo "Yes, This is dev"
-            else
+             else
               echo "No, this is not dev"
-              exit 0
-            fi
+             fi
