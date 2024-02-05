@@ -20,7 +20,7 @@ jobs:
 
       - name: Condition
         run: |
-             if grep -q -i "dev" temp.txt; then
+             if grep "dev" temp.txt; then
               echo "Yes, This is dev"
              else
               echo "No, this is not dev"
