@@ -1,6 +1,6 @@
 name: Enviroment Varaible
 on: 
-  pull_request:
+  push:
             branches:
               -Developer
               
