@@ -8,11 +8,11 @@ jobs:
     runs-on: ubantu-latest
     steps:
       - name: Checkout Repo
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Reading File From Repo
-      - run: export FILE_CONTENT=$(cat temp)
+        run: export FILE_CONTENT=$(cat temp)
       
       - name: Display Data
-      - run: echo "File Content:" $FILE_CONTENT
+        run: echo "File Content:" $FILE_CONTENT
               
