@@ -16,10 +16,11 @@ jobs:
         
       - name: Condition
         run: |
+            echo "File Content: $FILE_CONTENT"
             if [ "$FILE_CONTENT" = "Dev" ]; then
                   echo "Yes This is dev"
             else
                   echo "No this is not dev"
-                  exit 0
+                  exit o
             fi
                 
