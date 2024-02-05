@@ -11,14 +11,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Reading File From Repo
-        run: export FILE_CONTENT=$(cat Environment_varaible/temp.txt)
-      
-      - name: Display Data
-        run: |
-              echo "File Content:" $FILE_CONTENT
-              echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV
-      
-      - name: File Content
-        run: |
-              echo "Using File Content: $FILE_CONTENT"
-              
+        run: cat Environment_varaible/temp.txt
