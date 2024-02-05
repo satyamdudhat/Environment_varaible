@@ -21,6 +21,6 @@ jobs:
                   echo "Yes This is dev"
             else
                   echo "No this is not dev"
-                  exit o
+                  exit 0
             fi
                 
