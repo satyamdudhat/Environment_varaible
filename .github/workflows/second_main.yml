@@ -1,0 +1,17 @@
+name: Getting a data
+on:
+  push:
+    branches:
+      -master
+jobs:
+  getting-data:
+    runs-on: ubantu-latest
+    steps:
+      - name: Checkout Repo
+      - uses: actions/checkout@v3
+
+      - name: Reading File From Repo
+      - run: |
+              export FILE_CONTENT=$(cat temp)
+              echo "File Content: $FILE_CONTENT"
+              
