@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.print_data.outputs.file_content}}
+      output1: ${{ steps.print_data.outputs.file_content }}
       GITHUB_ENV: ${{ env.GITHUB_ENV }}
 
     steps:
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: Use File Content
         run: |
-          echo ${{needs.job1.outputs.file_content}}
+          echo ${{ needs.job1.outputs.file_content }}
 
 
 
