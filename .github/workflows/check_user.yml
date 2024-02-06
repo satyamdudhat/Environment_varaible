@@ -27,9 +27,9 @@ jobs:
       needs: job1
       env:
         FILE_CONTENT: ${{ env.FILE_CONTENT }}
-      if: ${{ env.FILE_CONTENT == 'dev' }}
+      # if: ${{ env.FILE_CONTENT == 'dev' }}
       steps:
         - name: Step 1
-          run: echo "This is job2"
+          run: echo "This is job2 $FILE_CONTENT"
     
     
