@@ -1,8 +1,7 @@
 name: Condition Work Flow
 on:
   push:
-    branches: 
-      - master
+    branches: master
 
 jobs:
   job1:
