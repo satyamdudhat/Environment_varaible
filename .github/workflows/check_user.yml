@@ -23,13 +23,17 @@ jobs:
         id: print_data
         run: echo "::set-output name=file_content::${{ env.FILE_CONTENT }}"
 
-  # job2:
-  #   runs-on: ubuntu-latest
-  #   needs: job1
-  #   steps:
-  #     - name: Use File Content
-  #       run: |
-  #         echo "Using file content in job 2: ${{ needs.job1.outputs.file_content }}"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: 
+      - job1
+    env:
+      fetch_dat: ${{needs.job1.outputs.file_content}}
+    steps:
+      - name: Use File Content
+        run: |
+          echo "Using file content in job 2: ${{ env.FILE_CONTENT }}"
 
 
 
