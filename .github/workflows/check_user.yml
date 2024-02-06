@@ -5,45 +5,12 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    # Map a step output to a job output
     outputs:
-      output1: ${{ steps.print_data.outputs.file_content }}
-      GITHUB_ENV: ${{ env.GITHUB_ENV }}
-
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-        
-      - name: Read File Content
-        run: |
-          FILE_CONTENT=$(cat temp.txt)
-          echo "File Content: $FILE_CONTENT"
-          echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV
-      - name: Print a Env Data
-        run : echo ${{ env.FILE_CONTENT }}
-      - name: export Build Number
-        id: print_data
-        run: echo "::set-output name=file_content::${{ env.FILE_CONTENT }}"
-
-
-  job2:
-    runs-on: ubuntu-latest
-    needs: 
-      - job1
-    # env:
-    #   FILE_CONTENT: ${{needs.job1.outputs.file_content}}
-    steps:
-      - name: Use File Content
-        run: |
-          echo ${{ needs.job1.outputs.file_content }}
-
-
-
-
-
-
-
-
-
-  
-    
+      - id: step1
+        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+      - id: step2
+        run: echo "test=world" >> "$GITHUB_OUTPUT"
