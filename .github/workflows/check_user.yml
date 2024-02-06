@@ -12,7 +12,9 @@ jobs:
 
       - name: Reading File Data
         run: |
-               FILE_CONTENT = $(cat temp.txt)
+          FILE_CONTENT = $(cat temp.txt)
+          echo "File Content: $FILE_CONTENT"
+
       
         
   
