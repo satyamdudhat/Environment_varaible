@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Chekout Repo
         uses: actions/checkout@v3
-
+      - name: Creating File
+        run: echo "Dev" > temp.txt
+        
       - name: Reading File Data
         run: |
           FILE_CONTENT = $(cat temp.txt)
