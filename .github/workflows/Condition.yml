@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Write to File
-        run: echo "dev" > temp.txt 
+        run: echo "ram" > temp.txt 
         
       - name: Reading Data
         run: |
