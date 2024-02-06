@@ -18,7 +18,7 @@ jobs:
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File_Content: $FILE_CONTENT"
-          echo "::set-output name=filedata::$File_Content"
+          echo "::set-output name=filedata::$FILE_CONTENT"
       
   # job2:
   #   runs-on: ubuntu-latest
