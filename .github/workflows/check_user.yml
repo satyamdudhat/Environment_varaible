@@ -1,23 +1,28 @@
+name: Condition Work Flow
 
-# jobs:
-#   job1:
-#     runs-on: ubuntu-latest
+on:
+  push:
+    branches: master
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
     
-#     steps:
-#       - name: Chekout Repo
-#         uses: actions/checkout@v3
+    steps:
+      - name: Chekout Repo
+        uses: actions/checkout@v3
 
-#       - name: Reading File Data
-#         run: |
-#           FILE_CONTENT=$(cat temp.txt)
-#           echo "File Content: $FILE_CONTENT"
-#           echo "FILE_CONTENT=$FILE_CONTENT >> $GITHUB_ENV"
-#           echo "FILE_CONTENT=${FILE_CONTENT}"       
-#       # here we set an value to env environment varaible using set-env
-#       # FILE_CONTENT this is an varaible name 
-#       # $FILE_CONTENT this is an value which we assign to varaible
-#       # GITHUB_ENV this a enviroment varible through which we can set directly env varaible and this variable is dyanmic
-#       #  echo "FILE_CONTENT=${FILE_CONTENT}"   this way you can print a data of env varaible
+      - name: Reading File Data
+        run: |
+          FILE_CONTENT=$(cat temp.txt)
+          echo "File Content: $FILE_CONTENT"
+          echo "FILE_CONTENT=$FILE_CONTENT >> $GITHUB_ENV"
+          echo "FILE_CONTENT=${FILE_CONTENT}"       
+      # here we set an value to env environment varaible using set-env
+      # FILE_CONTENT this is an varaible name 
+      # $FILE_CONTENT this is an value which we assign to varaible
+      # GITHUB_ENV this a enviroment varible through which we can set directly env varaible and this variable is dyanmic
+      #  echo "FILE_CONTENT=${FILE_CONTENT}"   this way you can print a data of env varaible
 
       
 #   job2:
@@ -34,31 +39,6 @@
 #           run: echo "This is job2 $FILE_CONTENT"  # Expand the environment variable directly
 
 
-name: Condition Work Flow
-
-on:
-  push:
-    branches: master
-
-jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set ENV Variable
-        run: |
-          FILE_CONTENT=$(cat temp.txt)
-          echo "File Content: $FILE_CONTENT"
-          echo "FILE_CONTENT=$FILE_CONTENT >> $GITHUB_ENV"
-          echo "FILE_CONTENT=${FILE_CONTENT}" 
-
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1  # Depend on job1's completion
-    env:
-      FILE_CONTENT: ${{ fromJSON(needs.job1.outputs.GITHUB_ENV).FILE_CONTENT }}  # Access from GITHUB_ENV
-    steps:
-      - name: Use ENV Variable
-        run: echo "FILE_CONTENT=${FILE_CONTENT}"
 
 
 
