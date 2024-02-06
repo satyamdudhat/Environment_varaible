@@ -29,11 +29,11 @@ jobs:
     needs: 
       - job1
     env:
-      fetch_dat: ${{needs.job1.outputs.file_content}}
+      FILE_CONTENT: ${{needs.job1.outputs.file_content}}
     steps:
       - name: Use File Content
         run: |
-          echo ${{ env.fetch_dat }}
+          echo ${{ env.FILE_CONTENT }}
 
 
 
