@@ -59,8 +59,8 @@ jobs:
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File Content: $FILE_CONTENT"
-          echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV
-          echo "This is job2 ${{ env.FILE_CONTENT }}"
+          echo "File_Content=$FILE_CONTENT" >> $GITHUB_ENV
+          echo "This is job2 ${{ env.File_Content }}"
 
   # job2:
   #   runs-on: ubuntu-latest
