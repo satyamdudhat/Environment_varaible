@@ -6,8 +6,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      FILE_CONTENT: " "
+    
     steps:
       - name: Chekout Repo
         uses: actions/checkout@v3
@@ -16,8 +15,10 @@ jobs:
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File Content: $FILE_CONTENT"
-          echo "::set-env name=FILE_CONTENT::$FILE_CONTENT"  
-      # here we set an value to env environment varaible using set-env 
+          echo "File Content: $FILE_CONTENT >> $GITHUB_ENV"  
+      # here we set an value to env environment varaible using set-env
+      # File Content this is an varaible name 
+      # $FILE_CONTENT this is an value which we assign to varaible
 
 
       
