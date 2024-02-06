@@ -25,7 +25,7 @@ jobs:
       runs-on: ubuntu-latest
       needs: job1
       env: 
-        FILE_CONTENT: ${{ env.FILE_CONTENT }}
+        FILE_CONTENT: ${{ steps.job1.outputs.FILE_CONTENT }}
       if: ${{ env.FILE_CONTENT == 'dev' }}
       steps:
         - name: Step 1
