@@ -46,8 +46,10 @@ jobs:
     steps:
       - name: Set ENV Variable
         run: |
-          FILE_CONTENT=$(cat temp.txt)  # Read file content into variable
-          echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV  # Set in GITHUB_ENV
+          FILE_CONTENT=$(cat temp.txt)
+          echo "File Content: $FILE_CONTENT"
+          echo "FILE_CONTENT=$FILE_CONTENT >> $GITHUB_ENV"
+          echo "FILE_CONTENT=${FILE_CONTENT}" 
 
   job2:
     runs-on: ubuntu-latest
