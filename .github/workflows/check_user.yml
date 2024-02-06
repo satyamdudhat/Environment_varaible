@@ -5,17 +5,23 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.print_data.outputs.file_content}}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+        
       - name: Read File Content
-        id: read_file
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File Content: $FILE_CONTENT"
           echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV
-          outputs:
-            file_content: ${{ steps.read_file.outputs.FILE_CONTENT }}
+      - name: Print a Env Data
+        run : echo ${{ env.FILE_CONTENT }}
+      - name: export Build Number
+        id: print_data
+        run: echo "::set-output name=file_content::${{ env.FILE_CONTENT }}"
 
   job2:
     runs-on: ubuntu-latest
