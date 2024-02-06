@@ -15,7 +15,7 @@ jobs:
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File Content: $FILE_CONTENT"
-          echo "FILE_CONTENT: $FILE_CONTENT >> $GITHUB_ENV"  
+          echo "FILE_CONTENT=$FILE_CONTENT >> $GITHUB_ENV"  
       # here we set an value to env environment varaible using set-env
       # FILE_CONTENT this is an varaible name 
       # $FILE_CONTENT this is an value which we assign to varaible
