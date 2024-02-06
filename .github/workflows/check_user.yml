@@ -6,6 +6,8 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      FILE_CONTENT: " "
     steps:
       - name: Chekout Repo
         uses: actions/checkout@v3
