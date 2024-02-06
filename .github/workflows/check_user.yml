@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Use File Content
         run: |
-          echo ${{ env.FILE_CONTENT }}
+          echo ${{ env.fetch_dat }}
 
 
 
