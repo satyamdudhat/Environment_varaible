@@ -15,7 +15,9 @@ jobs:
       - name: Reading File Data
         run: |
           FILE_CONTENT=$(cat temp.txt)
-          echo "File Content: $FILE_CONTENT"
+          echo "::set-env name=FILE_CONTENT::"  
+      # here we set an value to env environment varaible using set-env 
+
 
       
   job2:
