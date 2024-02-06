@@ -27,7 +27,7 @@ jobs:
       runs-on: ubuntu-latest
       needs: job1
       env:
-        FILE_CONTENT: ${{ fromJSON(env.GITHUB_ENV).FILE_CONTENT }}  # Access variable using fromJSON
+        FILE_CONTENT: ${{ fromJSON(needs.job1.outputs.GITHUB_ENV).FILE_CONTENT }}  # Access variable using fromJSON
         #${{ env.GITHUB_ENV }}: This retrieves the content of the $GITHUB_ENV
         #GitHub Actions stores environment variables in JSON format within the $GITHUB_ENV variable.
         # .FILE_CONTENT: This accesses the value of the FILE_CONTENT property from the parsed JSON object.
