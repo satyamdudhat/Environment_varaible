@@ -16,7 +16,7 @@ jobs:
         run: |
           FILE_CONTENT=$(cat temp.txt)
           echo "File Content: $FILE_CONTENT"
-          echo "FILE_CONTENT=$FILE_CONTENT" >> $GITHUB_ENV
+          echo "FILE_CONTENT=$FILE_CONTENT" >> $env:GITHUB_ENV
       - name: Print a Env Data
         run : echo ${{ env.FILE_CONTENT }}
       - name: export Build Number
@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Use File Content
         run: |
-          echo "Using file content in job 2: ${{ env.FILE_CONTENT }}"
+          echo ${{ env.FILE_CONTENT }}
 
 
 
