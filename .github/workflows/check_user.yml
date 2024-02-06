@@ -12,7 +12,7 @@ jobs:
 
       - name: Reading File Data
         run: |
-              '$FILE_CONTENT = $(cat temp.txt)
+               FILE_CONTENT = $(cat temp.txt)
                echo "This File One Content: $FILE_CONTENT"
       
         
