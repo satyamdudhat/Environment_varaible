@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.print_data.outputs.file_content}}
+      GITHUB_ENV: ${{ env.GITHUB_ENV }}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -28,12 +30,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: 
       - job1
-    env:
-      FILE_CONTENT: ${{needs.job1.outputs.file_content}}
+    # env:
+    #   FILE_CONTENT: ${{needs.job1.outputs.file_content}}
     steps:
       - name: Use File Content
         run: |
-          echo ${{ env.FILE_CONTENT }}
+          echo ${{needs.job1.outputs.file_content}}
 
 
 
